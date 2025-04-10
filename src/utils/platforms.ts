@@ -11,7 +11,8 @@ export type Architecture =
   | "x86_64"
   | "aarch64"
   | "s390x"
-  | "powerpc64le";
+  | "powerpc64le"
+  | "loongarch64";
 
 export function getArch(): Architecture | undefined {
   const arch = process.arch;
@@ -21,6 +22,7 @@ export function getArch(): Architecture | undefined {
     arm64: "aarch64",
     s390x: "s390x",
     ppc64: "powerpc64le",
+    loong64: "loongarch64",
   };
 
   if (arch in archMapping) {
